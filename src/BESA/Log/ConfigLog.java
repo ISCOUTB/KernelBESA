@@ -6,6 +6,8 @@ import java.io.InputStream;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+
+import BESA.Util.FileLoader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -38,11 +40,8 @@ public class ConfigLog {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 
-            ClassLoader classLoader = getClass().getClassLoader();
-            InputStream inputStream = classLoader.getResourceAsStream(CONFIG_FILE);
-            if (inputStream == null) {
-                System.out.print("error config XML fil");
-            }
+            InputStream inputStream = FileLoader.readFileToFileInputStream(CONFIG_FILE);
+
             Document doc = dBuilder.parse(inputStream);
 
             doc.getDocumentElement().normalize();
