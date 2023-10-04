@@ -95,7 +95,7 @@ public class StructBESA implements Serializable {
      * Indicates that the guard must be including by the behavior.
      *
      * @param guardClass The guard to add.
-     *	@param nameBehavior The behavior that adds the guard.
+     * @param behaviorName The behavior that adds the guard.
      */
     public void bindGuard(String behaviorName, Class guardClass) throws ExceptionBESA {
         Hashtable guardList = (Hashtable) behaviorsList.remove(behaviorName);

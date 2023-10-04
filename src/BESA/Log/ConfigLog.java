@@ -7,7 +7,9 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import BESA.Util.FileLoader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -40,7 +42,24 @@ public class ConfigLog {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 
-            InputStream inputStream = FileLoader.readFileToFileInputStream(CONFIG_FILE);
+            InputStream inputStream = null;
+
+            // Intentar cargar desde dentro del JAR
+            inputStream = getClass().getClassLoader().getResourceAsStream(CONFIG_FILE);
+
+            // Si no se encuentra dentro del JAR, intentar cargarlo desde el sistema de archivos
+            if (inputStream == null) {
+                File file = new File(CONFIG_FILE);
+                if (file.exists()) {
+                    try {
+                        inputStream = new FileInputStream(file);
+                    } catch (FileNotFoundException e) {
+                        throw new FileNotFoundException("No se pudo encontrar " + CONFIG_FILE + " ni dentro del JAR ni en el sistema de archivos");
+                    }
+                } else {
+                    throw new FileNotFoundException("No se pudo encontrar " + CONFIG_FILE + " ni dentro del JAR ni en el sistema de archivos");
+                }
+            }
 
             Document doc = dBuilder.parse(inputStream);
 

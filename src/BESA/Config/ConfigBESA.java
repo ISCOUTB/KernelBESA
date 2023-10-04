@@ -14,7 +14,9 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import BESA.Util.FileLoader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -60,12 +62,30 @@ public class ConfigBESA {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
 
-            InputStream inputStream = FileLoader.readFileToFileInputStream(CONFIG_FILE);
+            InputStream inputStream = null;
+
+            // Intentar cargar desde dentro del JAR
+            inputStream = getClass().getClassLoader().getResourceAsStream(CONFIG_FILE);
+
+            // Si no se encuentra dentro del JAR, intentar cargarlo desde el sistema de archivos
+            if (inputStream == null) {
+                File file = new File(CONFIG_FILE);
+                if (file.exists()) {
+                    try {
+                        inputStream = new FileInputStream(file);
+                    } catch (FileNotFoundException e) {
+                        throw new FileNotFoundException("No se pudo encontrar " + CONFIG_FILE + " ni dentro del JAR ni en el sistema de archivos");
+                    }
+                } else {
+                    throw new FileNotFoundException("No se pudo encontrar " + CONFIG_FILE + " ni dentro del JAR ni en el sistema de archivos");
+                }
+            }
+
             Document document = builder.parse(inputStream);
 
             document.getDocumentElement().normalize();
             Element root = document.getDocumentElement();
-            NodeList containerList = root.getElementsByTagName("Container");
+            NodeList containerList = root.getElementsByTagName("container");
 
             if (containerList.getLength() > 0) {
                 Element containerElement = (Element) containerList.item(0);
@@ -74,7 +94,7 @@ public class ConfigBESA {
                 container.setPassword(Double.parseDouble(containerElement.getAttribute("password")));
                 container.setIpaddress(containerElement.getAttribute("ipaddress"));
 
-                NodeList environmentList = containerElement.getElementsByTagName("Environment");
+                NodeList environmentList = containerElement.getElementsByTagName("environment");
                 if (environmentList.getLength() > 0) {
                     Element environmentElement = (Element) environmentList.item(0);
                     Environment environment = new Environment();
@@ -82,7 +102,7 @@ public class ConfigBESA {
                     environment.setSeneventattemps(Integer.parseInt(environmentElement.getAttribute("seneventattemps")));
                     environment.setSendeventtimeout(Long.parseLong(environmentElement.getAttribute("sendeventtimeout")));
 
-                    NodeList remoteList = environmentElement.getElementsByTagName("Remote");
+                    NodeList remoteList = environmentElement.getElementsByTagName("remote");
                     if (remoteList.getLength() > 0) {
                         Element remoteElement = (Element) remoteList.item(0);
                         Remote remote = new Remote();
