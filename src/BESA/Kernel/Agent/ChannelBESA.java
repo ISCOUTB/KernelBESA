@@ -13,10 +13,10 @@ import java.util.ArrayList;
 /**
  * This class represents a channel associated to a BESA agent.
  *
- * @author  SIDRe - Pontificia Universidad Javeriana
- * @author  Takina  - Pontificia Universidad Javeriana
+ * @author SIDRe - Pontificia Universidad Javeriana
+ * @author Takina - Pontificia Universidad Javeriana
  * @version 2.0, 11/01/11
- * @since   JDK1.0
+ * @since JDK1.0
  */
 final public class ChannelBESA implements Runnable {
 
@@ -47,7 +47,7 @@ final public class ChannelBESA implements Runnable {
 
     /**
      * Initializes a newly created ChannelBESA object.
-     * 
+     *
      * @param ag Agent to associate the channel.
      */
     public ChannelBESA(AgentBESA ag) {
@@ -93,7 +93,7 @@ final public class ChannelBESA implements Runnable {
         //--------------------------------------------------------------------//        
         while (ag.isAlive().booleanValue()) {
             if (ag.isAlive().booleanValue()) {                                  //For synchronized access. 
-                ReportBESA.trace("Before of receive events onto agent's channel: " + ag.getAlias());               
+                ReportBESA.trace("Before of receive events onto agent's channel: " + ag.getAlias());
                 //------------------------------------------------------------//
                 // Waits the reception of a event.                            // 
                 //------------------------------------------------------------//
@@ -130,8 +130,8 @@ final public class ChannelBESA implements Runnable {
 
     /**
      * Looks for the associated port a guard.
-     * 
-     * @param guard Guard on who the port will look for. 
+     *
+     * @param guard Guard on who the port will look for.
      * @return The found PortBESA.
      */
     final protected PortBESA findPort(GuardBESA guard) {
@@ -150,9 +150,9 @@ final public class ChannelBESA implements Runnable {
 
     /**
      * Creates a port associated to the guard and inserts it in the ports
-     * vector. Verifies that a port for this guard has not been created 
+     * vector. Verifies that a port for this guard has not been created
      * previously.
-     * 
+     *
      * @param guard Guard to which the created port will be associated.
      * @return The created port.
      */
@@ -173,9 +173,9 @@ final public class ChannelBESA implements Runnable {
     /**
      * Eliminates a guard associated port. In order to eliminate the port first
      * verifies that has been created a port for this guard and finally is made
-     * the elimination of the port. 
-     * 
-     * @param guard Guard associated to the port. 
+     * the elimination of the port.
+     *
+     * @param guard Guard associated to the port.
      * @return true if the port is removed; false otherwise.
      */
     final protected boolean removePort(GuardBESA guard) {
@@ -197,7 +197,7 @@ final public class ChannelBESA implements Runnable {
 
     /**
      * Eliminates the behavior of the ports in which it appears associate.
-     * 
+     *
      * @param beh The behavior to refer.
      */
     final protected void purgePorts(BehaviorBESA beh) {
@@ -214,10 +214,10 @@ final public class ChannelBESA implements Runnable {
     }
 
     /**
-     * Makes the processing of an BESA event. For this the event to be
-     * processed is transferred to the corresponding port, and is invoked to
-     * tryGuard to try to trigger the associated guard.
-     * 
+     * Makes the processing of an BESA event. For this the event to be processed
+     * is transferred to the corresponding port, and is invoked to tryGuard to
+     * try to trigger the associated guard.
+     *
      * @param ev The event to be processed.
      * @return true if the event is correctly processed and is been transfered
      * to the correct port; false if the event doesn't have an associated port.
@@ -238,7 +238,7 @@ final public class ChannelBESA implements Runnable {
 
     /**
      * Obtains the listing of ports associated to a channel.
-     * 
+     *
      * @return The list of ports.
      */
     final protected ArrayList getPorts() {
@@ -247,8 +247,8 @@ final public class ChannelBESA implements Runnable {
 
     /**
      * Returns the messages box associated to the channel.
-     * 
-     * @return The MBox associated. 
+     *
+     * @return The MBox associated.
      */
     final protected MBoxBESA getMbox() {
         return mbox;
@@ -256,8 +256,8 @@ final public class ChannelBESA implements Runnable {
 
     /**
      * Looks for the associated port to an event related by its guard.
-     * 
-     * @param evType Event of reference for the search.. 
+     *
+     * @param evType Event of reference for the search..
      * @return The found PortBESA.
      */
     final protected PortBESA findPort(String evType) {
@@ -265,10 +265,14 @@ final public class ChannelBESA implements Runnable {
         // Finds the associated port to the type event.                       //
         //--------------------------------------------------------------------//
         for (int i = 0; i < ports.size(); ++i) {
-            PortBESA iport = (PortBESA) ports.get(i);
-            GuardBESA iguard = (GuardBESA) iport.getGuard();
-            if (iguard.getEvType().equals(evType)) {                            //Checks the types.
-                return iport;
+            try {
+                PortBESA iport = (PortBESA) ports.get(i);
+                GuardBESA iguard = (GuardBESA) iport.getGuard();
+                if (iguard.getEvType().equals(evType)) {                            //Checks the types.
+                    return iport;
+                }
+            } catch (Exception e) {
+                return null;
             }
         }
         return null;
@@ -276,15 +280,15 @@ final public class ChannelBESA implements Runnable {
 
     /**
      * Initializes the barrier counter of the behavior.
-     * 
-     * @param counterValue Value to initialize the barrier counter. 
+     *
+     * @param counterValue Value to initialize the barrier counter.
      */
     public synchronized void initBehBarrier(int counterValue) {
         this.barrierCounter = counterValue;
     }
 
     /**
-     * Blocks the behavior while the barrier counter indicates it. 
+     * Blocks the behavior while the barrier counter indicates it.
      */
     public synchronized void waitBehBarrier() throws KernelAgentExceptionBESA {
         while (barrierCounter > 0) {
@@ -329,7 +333,7 @@ final public class ChannelBESA implements Runnable {
 
     /**
      * Obtains the barrier counter value.
-     * 
+     *
      * @return The barrier counter value.
      */
     public int getbarrierCounter() {
