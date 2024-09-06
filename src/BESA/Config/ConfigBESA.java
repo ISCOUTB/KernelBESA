@@ -461,4 +461,31 @@ public class ConfigBESA {
     public void setCheckpointTime(int checkpointTime) {
         this.checkpointTime = checkpointTime;
     }
+
+    @Override
+    public String toString() {
+        return "ConfigBESA{"
+                + "CONFIG_FILE='" + CONFIG_FILE + '\''
+                + ", DEFAULT_IP_ADDRESS='" + DEFAULT_IP_ADDRESS + '\''
+                + ", DEFAULT_SEND_EVENT_ATTEMPS=" + DEFAULT_SEND_EVENT_ATTEMPS
+                + ", DEFAULT_SEND_EVENT_TIMEOUT=" + DEFAULT_SEND_EVENT_TIMEOUT
+                + ", DEFAULT_RMI_TIMEOUT=" + DEFAULT_RMI_TIMEOUT
+                + ", environmentCase=" + environmentCase
+                + ", aliasContainer='" + aliasContainer + '\''
+                + ", passwordContainer=" + passwordContainer
+                + ", ipaddress='" + ipaddress + '\''
+                + ", rmiPort=" + rmiPort
+                + ", mcaddress='" + mcaddress + '\''
+                + ", mcport=" + mcport
+                + ", baplocatoradd='" + baplocatoradd + '\''
+                + ", bapport=" + bapport
+                + ", sendEventTimeout=" + sendEventTimeout
+                + ", rMITimeout=" + rMITimeout
+                + ", sendEventAttemps=" + sendEventAttemps
+                + ", bloport=" + bloport
+                + ", bpoPort=" + bpoPort
+                + ", checkpointTime=" + checkpointTime
+                + '}';
+    }
+
 }

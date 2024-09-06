@@ -20,9 +20,9 @@ public class ConfigLog {
 
     private String CONFIG_FILE = "confbesa.xml";
     private boolean trace = false;
-    private boolean debug = true;
-    private boolean info = true;
-    private boolean warn = true;
+    private boolean debug = false;
+    private boolean info = false;
+    private boolean warn = false;
     private boolean error = true;
     private boolean fatal = true;
     private boolean logmanager = false;
