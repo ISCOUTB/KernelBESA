@@ -25,8 +25,8 @@ jobs:
         run: |
           find . -name "*.jar" > jar_paths.txt
       - name: Upload JAR artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: built-jars
-          path: |
+          name: built-jar
+          path: target/*.jar
             $(cat jar_paths.txt)
