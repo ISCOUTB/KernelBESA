@@ -13,9 +13,10 @@ import BESA.Kernel.Agent.Event.DataBESA;
  * This class represent
  *
  * @author fabianjose
- * @version 0.7
+ * @version ${project.version}
  * @see
  * @since   JDK1.0
+ * @note Migrado a Maven y Java 21 (KernelBESA 3.5)
  */
 public class TimeOutData extends DataBESA {
 

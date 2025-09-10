@@ -16,8 +16,9 @@ import java.io.PrintWriter;
  * 
  * @author  SIDRe - Pontificia Universidad Javeriana
  * @author  Takina  - Pontificia Universidad Javeriana
- * @version 2.0, 11/01/11
+ * @version ${project.version}
  * @since   JDK1.0
+ * @note Migrado a Maven y Java 21 (KernelBESA 3.5)
  */
 public class ResultBESA {
 
