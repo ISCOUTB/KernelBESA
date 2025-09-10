@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.sidrepuj</groupId>
-    <artifactId>KernelBESA</artifactId>
+    <artifactId>KernelBESA3</artifactId>
     <version>3.5</version>
-    <packaging>jar</packaging>
-    <name>KernelBESA</name>
-    <description>Proyecto migrado de Ant a Maven</description>
+    <packaging>jar</packaging>|
+    <name>KernelBESA3</name>
+    <description>Proyecto del KernelBesa3</description>
     <properties>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
