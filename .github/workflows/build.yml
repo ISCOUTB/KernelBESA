@@ -1,4 +1,4 @@
-name: Build JAR with Ant
+name: Build JAR with Maven
 
 on:
   push:
