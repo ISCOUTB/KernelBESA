@@ -3,4 +3,5 @@
 /dist/
 /build/
 /target/
-/.idea/
+.vscode/
+.idea/
