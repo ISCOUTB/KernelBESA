@@ -30,7 +30,7 @@
         <repository>
             <id>github</id>
             <name>GitHub KernelBESA Maven Packages</name>
-            <url>https://maven.pkg.github.com/SIDRePUJ/KernelBESA</url>
+            <url>https://maven.pkg.github.com/ISCOUTB/KernelBESA</url>
         </repository>
     </distributionManagement>
 </project>

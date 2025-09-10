@@ -1,5 +1,18 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <servers>
+    <!-- GitHub Packages repository server id must match the <id> in pom.xml distributionManagement -->
+    <server>
+      <id>github</id>
+      <!-- The username can be any string when using GITHUB_TOKEN, but set to GITHUB_ACTOR for clarity -->
+      <username>${env.GITHUB_ACTOR}</username>
+      <!-- Use the token from the environment (set by the workflow) -->
+      <password>${env.GITHUB_TOKEN}</password>
+    </server>
+  </servers>
+</settings><settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
   <servers>
     <server>
