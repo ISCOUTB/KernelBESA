@@ -1,0 +1,32 @@
+name: Build JAR with Ant
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Install Ant
+        run: sudo apt-get update && sudo apt-get install -y ant
+      - name: Build with Ant
+        run: ant
+      - name: Find JAR
+        run: |
+          find . -name "*.jar" > jar_paths.txt
+      - name: Upload JAR artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: built-jars
+          path: |
+            $(cat jar_paths.txt)
