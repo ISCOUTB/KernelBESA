@@ -17,16 +17,26 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Install Ant
-        run: sudo apt-get update && sudo apt-get install -y ant
-      - name: Build with Ant
-        run: ant
-      - name: Find JAR
-        run: |
-          find . -name "*.jar" > jar_paths.txt
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
       - name: Upload JAR artifact
         uses: actions/upload-artifact@v4
         with:
           name: built-jar
           path: target/*.jar
-            $(cat jar_paths.txt)
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      - name: Publish to GitHub Packages
+        run: mvn deploy --settings .github/maven-settings.xml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
