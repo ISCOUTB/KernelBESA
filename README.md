@@ -6,9 +6,10 @@ KernelBESA es la implementación del núcleo (kernel) del framework de agentes B
 
 Estado y metadatos
 -------------------
-- Version: 3.5
-- Empaquetado: jar
+- Version: 3.5.1
+- Empaquetado: jar  
 - Java requerido: 21
+- Coordenadas Maven: `io.github.iscoutb:kernel-besa:3.5.1`
 
 Contenido y arquitectura (resumen)
 ----------------------------------
