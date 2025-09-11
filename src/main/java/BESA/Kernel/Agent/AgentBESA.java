@@ -138,7 +138,7 @@ public abstract class AgentBESA {
     /**
      * Load Agent from Database
      *
-     * @autor Jairo Serrano
+     * @author Jairo Serrano
      * @return true if CheckPoint data exists
      */
     private synchronized boolean loadAgent() {
@@ -208,8 +208,6 @@ public abstract class AgentBESA {
 
     /**
      * Guarda el estado del Agente completo
-     *
-     * @autor Jairo Serrano
      */
     public synchronized void saveAgent() {
 
@@ -314,7 +312,7 @@ public abstract class AgentBESA {
      * TODO Verificar seguridad.
      *
      * @param ev Event that is deposited in the mailbox.
-     * @throws BESA.Exception.ExceptionBESA Is generated if some error happens.
+     * @throws KernelAgentExceptionBESA Is generated if some error happens.
      */
     public void sendEvent(EventBESA ev) throws KernelAgentExceptionBESA {
         try {
@@ -352,7 +350,6 @@ public abstract class AgentBESA {
      *
      * @return String that identifies of unique way the agent between the BESA
      * containers.
-     * @uml.property name="aid"
      */
     final public String getAid() {
         return aid;
@@ -362,7 +359,6 @@ public abstract class AgentBESA {
      * Obtains the alias of the agent.
      *
      * @return Alias of the agent.
-     * @uml.property name="alias"
      */
     final public String getAlias() {
         return alias;

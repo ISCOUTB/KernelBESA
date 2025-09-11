@@ -12,13 +12,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * This class represents 
- * 
+ * This class represents the result data structure for BESA operations.
+ *
  * @author  SIDRe - Pontificia Universidad Javeriana
  * @author  Takina  - Pontificia Universidad Javeriana
  * @version ${project.version}
  * @since   JDK1.0
- * @note Migrado a Maven y Java 21 (KernelBESA 3.5)
+ *
+ * Migration notes: Migrated to Maven and Java 21 (KernelBESA 3.5)
  */
 public class ResultBESA {
 

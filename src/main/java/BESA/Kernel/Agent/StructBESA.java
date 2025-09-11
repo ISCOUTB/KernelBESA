@@ -63,7 +63,6 @@ public class StructBESA implements Serializable {
      * Indicates that the guard must be including by the behavior.
      *
      * @param nameGuard The guard to add.
-     *	@param nameBehavior The behavior that adds the guard.
      */
     public void bindGuard(Class nameGuard) {
         addBehavior("DefaultBehavior");

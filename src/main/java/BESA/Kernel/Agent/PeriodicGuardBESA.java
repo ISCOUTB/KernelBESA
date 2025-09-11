@@ -61,8 +61,6 @@ public abstract class PeriodicGuardBESA extends GuardBESA {
 
     /**
      * Creates a new instance.
-     *
-     * @param ag References to current agent.
      */
     public PeriodicGuardBESA() {
         super();
@@ -97,7 +95,7 @@ public abstract class PeriodicGuardBESA extends GuardBESA {
 
     /**
      * (non-Javadoc)
-     * @see BESA.Agent.GuardBESA#funcExecGuard(BESA.Agent.Event.EventBESA)
+     * @see GuardBESA#funcExecGuard(EventBESA)
      */
     @Override
     public void funcExecGuard(EventBESA event) {

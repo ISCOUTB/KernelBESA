@@ -20,7 +20,7 @@ import BESA.Kernel.Agent.GuardBESA;
 public abstract class InitStageProtocolBESA extends GuardBESA {
 
     /**
-     * @param ag
+     * Constructor for InitStageProtocolBESA.
      */
     public InitStageProtocolBESA() {
         super();

@@ -37,7 +37,7 @@ public class ExceptionBESA extends Exception {
      * Sets the value of the message that contains a description of the
      * exception.
      *
-     * @param msg A string with the exception.
+     * @param message A string with the exception.
      */
     public ExceptionBESA(String message) {
         super(msg + message);

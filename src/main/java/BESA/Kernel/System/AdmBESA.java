@@ -214,10 +214,10 @@ public abstract class AdmBESA {
      * searchAidByAlias buscar agentes que responden a un alias - paginas
      * blancas
      *
+     * @param alias nombre con el que se referencian el/los agentes buscados
      * @return un iterator con los aids de los agentes encontrados OJO: por
      * ahora retorna solo el aid de un agente, falta hacer lo del iterator
-     * @param alias nombre con el que se referencian el/los agentes buscados
-     * @throws BESA.Exception.ExceptionBESA
+     * @throws SystemExceptionBESA if an error occurs during the search
      */
     public abstract String searchAidByAlias(String alias) throws SystemExceptionBESA;
 
@@ -243,23 +243,16 @@ public abstract class AdmBESA {
 
     /**
      * This method activate CheckPoint System
-     *
-     * @autor Jairo Serrano
-     * @param checkpointType Tipo de Checkpoint
      */
     public abstract void executeCheckpoint();
 
     /**
      * This method activate CheckPoint System
-     *
-     * @autor Jairo Serrano
      */
     public abstract void activateCheckpoint();
 
     /**
      * This method activate CheckPoint System
-     *
-     * @autor Jairo Serrano
      */
     public abstract void deactivateCheckpoint();
 
@@ -280,24 +273,25 @@ public abstract class AdmBESA {
 
     /**
      *
-     * @param agAlias
-     * @return
-     * @throws SystemExceptionBESA
+     * @param agAlias The alias of the agent
+     * @return The handler for the agent
+     * @throws SystemExceptionBESA If an error occurs
      */
     public abstract AgHandlerBESA getHandlerByAlias(String agAlias) throws ExceptionBESA;
 
     /**
+     * Gets the list of administrator aliases.
      *
-     * @param agAlias
-     * @return
-     * @throws ExceptionBESA
+     * @return Enumeration of administrator aliases
+     * @throws ExceptionBESA If an error occurs
      */
     public abstract Enumeration<String> getAdmAliasList();
 
     /**
+     * Erases an agent from the system.
      *
-     * @param aid
-     * @return
+     * @param agH The agent handler to erase
+     * @return The result of the erase operation
      */
     public abstract String erase(AgHandlerBESA agH);
 
@@ -340,7 +334,6 @@ public abstract class AdmBESA {
      *
      * @param agId id del agente
      * @param servId nombre/identificador unico del servicio
-     * @return true si todo bien, false si el servicio no ha sido creado
      */
     public abstract void unbindService(String agId, String servId);
 
@@ -352,10 +345,11 @@ public abstract class AdmBESA {
     public abstract void kill(double containerPassword) throws ExceptionBESA;
 
     /**
+     * Registers an agent in the system.
      *
-     * @param agId
-     * @param agh
-     * @param agAlias
+     * @param agId The agent ID
+     * @param agh The agent handler
+     * @param agAlias The agent alias
      */
     public abstract void registerAgent(String agId, AgHandlerBESA agh, String agAlias) throws ExceptionBESA;
 

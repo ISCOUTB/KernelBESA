@@ -39,7 +39,6 @@ public class StageDataBESA extends DataMultiGuardBESA {
 
     /**
      * @return  Returns the reply2Guard.
-     * @uml.property  name="reply2Guard"
      */
     public String getReply2Guard() {
         return reply2Guard;
@@ -47,7 +46,6 @@ public class StageDataBESA extends DataMultiGuardBESA {
 
     /**
      * @return  Returns the myId.
-     * @uml.property  name="myId"
      */
     public String getMyId() {
         return myId;

@@ -43,7 +43,6 @@ public class ProtocolBESA {
 
     /**
      * @return  Returns the stackStages.
-     * @uml.property  name="stackStages"
      */
     public ArrayList<Class> getStackStages() {
         return stackStages;
@@ -69,16 +68,15 @@ public class ProtocolBESA {
 
     /**
      * @return  Returns the lastStage.
-     * @uml.property  name="lastStage"
      */
     public String getLastStage() {
         return lastStage;
     }
 
     /**
-     *  Sirve para agregar protocolos en tiempo real una vez se ha crado la estructura
-     * @param proto El protocolo a se a�adido
-     * @return valor que indica si fue o no, exitosa la operaci�n
+     *  Sirve para agregar protocolos en tiempo real una vez se ha creado la estructura
+     * @param structAgent El agente cuya estructura se va a añadir
+     * @return valor que indica si fue o no exitosa la operación
      */
     public boolean addProtocol(StructBESA structAgent) {
         if (structAgent != null) {

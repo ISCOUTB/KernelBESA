@@ -32,12 +32,11 @@ public class ServiceProviderDescriptor {
     }
 
     /**
-     * @description Metodo que incluye un servicio a la tabla.
+     * Method that includes a service in the table.
      *
-     * @param	SPService theService	El servicio a ser adicionado a la tabla de proveedores de servicios
-     *
-     * @return	true	si se pudo adicionar el servicio a la tabla
-     * 			false	si no se pudo adicionar el servicio a la tabla
+     * @param theService The service to be added to the service providers table
+     * @return true if the service could be added to the table,
+     *         false if the service could not be added to the table
      */
     public boolean addSPService(SPService theService) throws ServiceProviderAgentExceptionBESA {
         try {

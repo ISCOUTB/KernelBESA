@@ -39,7 +39,6 @@ public abstract class DataMultiGuardBESA extends DataBESA {
      * when multiguards are contemplated.
      *
      * @return GuardIndex to activate.
-     * @uml.property  name="guardIndex"
      */
     public String getGuardIndex() {
         return guardIndex;

@@ -33,9 +33,9 @@ final public class SensorThread implements Runnable {
     private SensorBESA sensor;
 
     /**
-     * @description Agregar descripci�n del elemento
+     * Constructor for SensorThread.
      *
-     * @param sensor
+     * @param sensor The sensor associated with this thread
      */
     public SensorThread(SensorBESA sensor) {
         this.sensor = sensor;

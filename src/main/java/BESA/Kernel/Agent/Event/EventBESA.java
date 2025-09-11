@@ -100,9 +100,8 @@ public class EventBESA extends ACLBESA implements Serializable {
 
     /**
      * Constructs a newly created EventBESA object.
-     * 
-     * @param evType A String that represents the event type. 
-     * @param data The event data.
+     *
+     * @param evType A String that represents the event type.
      */
     public EventBESA(String evType) {
         super();

@@ -27,7 +27,7 @@ import java.util.logging.Logger;
 public class GuardServiceProviderRequest extends GuardBESA {
 
     /**
-     * @param ag
+     * Constructor for GuardServiceProviderRequest.
      */
     public GuardServiceProviderRequest() {
         super();

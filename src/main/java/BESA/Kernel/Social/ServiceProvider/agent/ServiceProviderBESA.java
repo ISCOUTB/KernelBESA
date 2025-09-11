@@ -50,7 +50,7 @@ public abstract class ServiceProviderBESA extends AgentBESA {
     /**
      * (non-Javadoc)
      *
-     * @see BESA.Agent.AgentBESA#shutdownAgent()
+     * @see AgentBESA#shutdownAgent()
      */
     @Override
     public void shutdownAgent() {

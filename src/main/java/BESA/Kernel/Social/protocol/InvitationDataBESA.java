@@ -24,7 +24,9 @@ public class InvitationDataBESA extends DataBESA {
     private String myId;
 
     /**
-     * @param response2Guard
+     * Constructor for InvitationDataBESA.
+     *
+     * @param myId The ID for this invitation data
      */
     public InvitationDataBESA(String myId) {
         this.myId = myId;
@@ -32,15 +34,15 @@ public class InvitationDataBESA extends DataBESA {
 
     /**
      * @return  Returns the myId.
-     * @uml.property  name="myId"
      */
     public String getMyId() {
         return myId;
     }
 
     /**
-     * 
-     * @param myId
+     * Sets the ID for this invitation data.
+     *
+     * @param myId The ID to set
      */
     public void setMyId(String myId) {
         this.myId = myId;

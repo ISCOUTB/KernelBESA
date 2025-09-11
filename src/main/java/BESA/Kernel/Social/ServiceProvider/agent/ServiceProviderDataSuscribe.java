@@ -98,7 +98,8 @@ public class ServiceProviderDataSuscribe extends DataBESA {
     }
 
     /**
-     * @param dataType The dataType to set.
+     * Sets the service name.
+     * @param serviceName The service name to set.
      */
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;

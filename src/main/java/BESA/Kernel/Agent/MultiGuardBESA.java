@@ -33,8 +33,6 @@ public abstract class MultiGuardBESA extends GuardBESA {
 
     /**
      * Creates a new multiguard.
-     * 
-     * @param ag Multiguard associated agent.
      */
     public MultiGuardBESA() {
         super();

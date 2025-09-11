@@ -20,7 +20,7 @@ import BESA.Kernel.Agent.MultiGuardBESA;
 public class ProtocolStackBESA extends MultiGuardBESA {
 
     /**
-     * @param ag
+     * Default constructor for ProtocolStackBESA.
      */
     public ProtocolStackBESA() {
         super();

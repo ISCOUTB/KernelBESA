@@ -119,8 +119,6 @@ public class PortBESA {
 
     /**
      * Initializes a new TimeOutThread object with a wait time associated.
-     *  
-     * @param waitMSTime Specified wait time. 
      */
     public void createTimeOutThread() {
         this.timeOutThread = new TimeOutThread(this);

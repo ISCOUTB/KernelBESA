@@ -41,13 +41,13 @@ public abstract class SourceIP extends SourceInfo {
     private String nameIP;
 
     /**
-     * @description Agregar descripci�n del elemento
+     * Constructor for SourceIP.
      *
-     * @param alias
-     * @param type
-     * @param headerSize
-     * @param portIP
-     * @param nameIP
+     * @param alias The alias for this IP source
+     * @param type The type of the source
+     * @param headerSize The size of the header
+     * @param portIP The IP port
+     * @param nameIP The name of the IP
      */
     public SourceIP(String alias, int type, int headerSize, int portIP, String nameIP) throws ServiceProviderSensorExceptionBESA {
         super(alias, SourceInfo.TYPE_IP, headerSize);

@@ -44,8 +44,8 @@ public class StateServiceProvider extends StateBESA {
 
     /**
      * Creates an instance of StateServiceProvider class.
-     * @param Adapter.
-     * @param Service provider descriptor.
+     * @param adapter The adapter for the service provider
+     * @param descriptor The service provider descriptor
      */
     public StateServiceProvider(AdapterBESA adapter, ServiceProviderDescriptor descriptor) {
         super();
@@ -88,8 +88,8 @@ public class StateServiceProvider extends StateBESA {
     }
 
     /**
-     * The agentsGuardsTableAsync to set.
-     * @param agents guards tableAsync.
+     * Sets the agents guards table for asynchronous operations.
+     * @param agentsGuardsTableAsync The agents guards table to set
      */
     public void setAgentsGuardsTableAsync(Hashtable<String, ArrayList<SPInfoGuard>> agentsGuardsTableAsync) {
         this.agentsGuardsTableAsync = agentsGuardsTableAsync;

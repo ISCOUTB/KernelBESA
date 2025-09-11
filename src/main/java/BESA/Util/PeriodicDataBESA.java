@@ -16,7 +16,8 @@ import BESA.Kernel.Agent.Event.DataBESA;
  * @author  Takina  - Pontificia Universidad Javeriana
  * @version ${project.version}
  * @since   JDK1.0
- * @note Migrado a Maven y Java 21 (KernelBESA 3.5)
+ *
+ * Migration notes: Migrated to Maven and Java 21 (KernelBESA 3.5)
  */
 public class PeriodicDataBESA extends DataBESA {
 

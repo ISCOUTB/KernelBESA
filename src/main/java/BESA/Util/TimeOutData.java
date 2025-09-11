@@ -10,13 +10,13 @@ package BESA.Util;
 import BESA.Kernel.Agent.Event.DataBESA;
 
 /**
- * This class represent
+ * This class represents timeout data for BESA operations.
  *
  * @author fabianjose
  * @version ${project.version}
- * @see
  * @since   JDK1.0
- * @note Migrado a Maven y Java 21 (KernelBESA 3.5)
+ *
+ * Migration notes: Migrated to Maven and Java 21 (KernelBESA 3.5)
  */
 public class TimeOutData extends DataBESA {
 

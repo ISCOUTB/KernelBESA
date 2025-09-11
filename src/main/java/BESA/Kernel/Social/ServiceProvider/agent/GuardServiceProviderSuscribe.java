@@ -39,7 +39,7 @@ public class GuardServiceProviderSuscribe extends GuardBESA {
     static final int ASYNC_UNSUBSCRIBE = 3;
 
     /**
-     * @param ag
+     * Constructor for GuardServiceProviderSuscribe.
      */
     public GuardServiceProviderSuscribe() {
         super();

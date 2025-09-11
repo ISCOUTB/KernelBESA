@@ -40,11 +40,11 @@ public abstract class SPService {
     }
 
     /**
-     * @description	metodo encargado de ejecutar el servicio es mandatorio sobreescribirlo
-     * @param adapter TODO
-     * @param SPServiceDataMoveRobot data	los datos necesarios para ejecutar el servicio
+     * Method responsible for executing the service, must be overridden.
      *
-     * @return	SPServiceDataRequest	los datos posteriores a haber ejecutado el servicio
+     * @param data The data necessary to execute the service
+     * @param adapter The adapter for the service execution
+     * @return The data after executing the service
      */
     public abstract DataBESA executeService(SPServiceDataRequest data, AdapterBESA adapter);
 }
